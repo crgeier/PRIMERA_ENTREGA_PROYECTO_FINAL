@@ -1,0 +1,31 @@
+{% extends 'empresa2/base.html' %}
+{% load static %}
+
+{% block content %}
+<html>
+<head>
+  <title>Ingrese sus datos</title>
+</head>
+
+<body>
+  <div style="margin: 20px 0 ; text-align:center">
+  <h2>Bienvenidos</h2>
+  <p><h4>Ingrese los datos de su Gerencia.</4></p>
+
+<form action='/empresa2/formulario1/' method='POST'>
+    
+  {% csrf_token %}
+  <p>
+    Nombre de Gerencia: <input type='type' name='name'>
+  </p>
+  <p>
+    Descripción: <input type='type' name='description'>   
+  </p>
+  <input type='submit' value='Enviar'>
+</form>
+
+
+</body>
+
+</html>
+{% endblock %}

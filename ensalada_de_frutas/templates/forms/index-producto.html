@@ -1,0 +1,32 @@
+{% extends 'empresa2/base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin: 20px 0 ; text-align:center">	
+
+<html>
+<head>
+  <title>Ingrese sus datos</title>
+</head>
+
+<body>
+  <h2>Bienvenidos</h2>
+  <p><h4>Ingrese sus datos a continuación, según corresponda.</h4></p>
+
+<form action='/empresa2/formulario2/' method='POST'>
+    
+  {% csrf_token %}
+  <p>
+    Nombre de Producto: <input type='type' name='name'>
+  </p>
+  <p>
+    Precio: <input type='type' name='price'>   
+  </p>
+  <input type='submit' value='Enviar'>
+</form>
+
+
+</body>
+
+</html>
+{% endblock %} 

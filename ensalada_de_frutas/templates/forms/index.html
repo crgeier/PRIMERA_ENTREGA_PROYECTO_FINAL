@@ -1,0 +1,35 @@
+{% extends 'empresa2/base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin: 20px 0 ; text-align:center">	
+
+<html>
+<head>
+  <title>Ingrese sus datos</title>
+</head>
+
+<body>
+  <h2>Bienvenidos</h2>
+  <p><h4>Ingrese sus datos a continuación.</h4></p>
+
+  <form action='/empresa2/formulario/' method='POST'>
+    
+  {% csrf_token %}
+  <p>
+    Nombre: <input type='type' name='name'>
+  </p>
+  <p>
+    Email: <input type='type' name='email'>   
+  </p>
+  <p>
+    Legajo: <input type='type' name='file'> 
+  </p>
+
+  <input type='submit' value='Enviar'>
+</form>
+
+</body>
+
+</html>
+{% endblock %} 

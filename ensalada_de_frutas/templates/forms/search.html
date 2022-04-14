@@ -1,0 +1,27 @@
+{% extends 'empresa2/base.html' %}
+{% load static %}
+
+{% block content %}
+<div style="margin: 20px 0 ; text-align:center">	
+   <body>
+      <p><b><h2>Busque su producto</h2></b></p>
+   
+
+   <form action = '/empresa2/search/' method='POST'> 
+       {%csrf_token%}
+       <input type='type' name='name'>
+       <input type='submit' value='Buscar'>
+   </form>
+
+   {% if elements %}
+   <h4> Resultados </h4>
+   {% endif %} 
+    {% for element in elements%}
+        <p><b>{{ element.name }}</b></p>
+        <p>$ {{ element.price }} / KG</p>
+
+    {% endfor %}
+  
+</body>
+</html>
+{% endblock %} 
